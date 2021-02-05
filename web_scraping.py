@@ -1,4 +1,4 @@
-#!/Users/philippeostiguy/Desktop/Programmation/Code_projets/webscrap_headline/venv/bin/python
+#!/usr/local/bin/python3.7
 # -*- coding: utf-8 -*-
 ###############################################################################
 #
