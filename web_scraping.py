@@ -91,7 +91,7 @@ class Init():
 
         #initialize value here
         self.start_date = "2020-02-10"
-        self.end_date = "2020-03-20"
+        self.end_date = "2020-05-20"
         self.ticker = 'AAPL'
 
         self.db_name = 'financial_data'
@@ -172,7 +172,10 @@ class FinnHub():
         self.end_date_ = end_date_ #datetime object
 
         #call the methods to access historical financial headlines
-        tickers = get_tickers()
+        #tickers = get_tickers() #get_tickers is to get tickers from all the companies listedin the s&p 500
+
+        tickers = ['AAPL']
+
         for ticker_ in tickers:
             self.ticker = ticker_ + '_'
             self.ticker_request = ticker_
