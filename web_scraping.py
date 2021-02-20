@@ -90,8 +90,8 @@ class Init():
         """
 
         #initialize value here
-        self.start_date = "2021-02-01"
-        self.end_date = "2021-02-01"
+        self.start_date = "2021-02-17"
+        self.end_date = "2021-02-18"
         self.ticker = 'AAPL'
 
         self.db_name = 'financial_data'
