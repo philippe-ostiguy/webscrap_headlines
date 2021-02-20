@@ -70,7 +70,7 @@ class Init():
         """Built-in method to inialize the global values for the module
 
         Attributes
-        -------------------
+        -----------
         `self.start.date` : str
             start date of the training period. Must be within the last year for the free version of FinHub. Format
             must be "YYYY-mm-dd"
