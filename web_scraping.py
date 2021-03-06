@@ -94,6 +94,7 @@ class Init():
         self.end_date = "2021-02-22"
         self.tickers = ['AMZN']
 
+
         self.db_name = 'financial_data'
         self.dir_path = os.path.dirname(os.path.realpath(__file__)) + '/output/' + self.start_date + '_' + \
                         self.end_date + '/'
