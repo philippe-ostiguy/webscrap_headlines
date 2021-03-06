@@ -90,9 +90,9 @@ class Init():
         """
 
         #initialize value here
-        self.start_date = "2021-02-17"
+        self.start_date = "2021-02-15"
         self.end_date = "2021-02-18"
-        self.ticker = 'AAPL'
+        self.tickers = ['SPX','USO','GLD','IEF','UUP']
 
         self.db_name = 'financial_data'
         self.dir_path = os.path.dirname(os.path.realpath(__file__)) + '/output/' + self.start_date + '_' + \
@@ -115,7 +115,7 @@ class Init():
 class FinnHub():
     """Class to make API calls to FinnHub"""
 
-    def __init__(self,start_date,end_date,start_date_,end_date_,ticker,dir_path,db_name):
+    def __init__(self,start_date,end_date,start_date_,end_date_,tickers,dir_path,db_name):
         """ Class constructor
 
         Parameters
@@ -161,8 +161,8 @@ class FinnHub():
         self.news_header = ['category', 'datetime','headline','id','image','related','source','summary','url']
         self.start_date = start_date
         self.end_date = end_date
-        self.ticker = ticker
-        self.ticker_request = ticker #different value because ticker like 'ALL' (All State) can generate error in SQLite
+        self.tickers = tickers
+        self.ticker_request = tickers #different value because ticker like 'ALL' (All State) can generate error in SQLite
                                     #database
         self.dir_path = dir_path
         self.db_name = db_name
@@ -174,9 +174,7 @@ class FinnHub():
         #call the methods to access historical financial headlines
         #tickers = get_tickers() #get_tickers is to get tickers from all the companies listedin the s&p 500
 
-        tickers = ['AAPL']
-
-        for ticker_ in tickers:
+        for ticker_ in self.tickers:
             self.ticker = ticker_ + '_'
             self.ticker_request = ticker_
             self.req_new()
@@ -311,4 +309,4 @@ class FinnHub():
 init_ = Init()
 
 finhub = FinnHub(start_date=init_.start_date, end_date=init_.end_date,start_date_=init_.start_date_ ,
-                end_date_ =init_.end_date_, ticker=init_.ticker, dir_path =init_.dir_path,db_name=init_.db_name)
+                end_date_ =init_.end_date_, tickers=init_.tickers, dir_path =init_.dir_path,db_name=init_.db_name)
