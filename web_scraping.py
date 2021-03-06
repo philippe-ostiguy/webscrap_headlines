@@ -90,9 +90,9 @@ class Init():
         """
 
         #initialize value here
-        self.start_date = "2021-02-15"
-        self.end_date = "2021-02-18"
-        self.tickers = ['SPX','USO','GLD','IEF','UUP']
+        self.start_date = "2020-10-22"
+        self.end_date = "2021-02-22"
+        self.tickers = ['AMZN']
 
         self.db_name = 'financial_data'
         self.dir_path = os.path.dirname(os.path.realpath(__file__)) + '/output/' + self.start_date + '_' + \
@@ -107,10 +107,11 @@ class Init():
         except:
             print("'start_date' is after 'end_date'")
 
-        try :
-            datetime.strptime(self.start_date, "%Y-%m-%d") <= (datetime.now()- relativedelta(years=1))
-        except:
-            print("'start_date' is older than 1 year. It doesn't work with the free version of FinHub")
+        t = (datetime.now()- relativedelta(years=1))
+        d= datetime.strptime(self.start_date, "%Y-%m-%d")
+
+        if (datetime.strptime(self.start_date, "%Y-%m-%d") <= (datetime.now()- relativedelta(years=1))) :
+            raise Exception("'start_date' is older than 1 year. It doesn't work with the free version of FinHub")
 
 class FinnHub():
     """Class to make API calls to FinnHub"""
@@ -175,6 +176,7 @@ class FinnHub():
         #tickers = get_tickers() #get_tickers is to get tickers from all the companies listedin the s&p 500
 
         for ticker_ in self.tickers:
+            self.js_data.clear()
             self.ticker = ticker_ + '_'
             self.ticker_request = ticker_
             self.req_new()
