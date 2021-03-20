@@ -90,10 +90,9 @@ class Init():
         """
 
         #initialize value here
-        self.start_date = "2020-10-22"
+        self.start_date = "2020-09-22"
         self.end_date = "2021-02-22"
         self.tickers = ['AMZN']
-
 
         self.db_name = 'financial_data'
         self.dir_path = os.path.dirname(os.path.realpath(__file__)) + '/output/' + self.start_date + '_' + \
