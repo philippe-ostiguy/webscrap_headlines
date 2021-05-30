@@ -102,6 +102,7 @@ class Init():
         self.end_date_ = datetime.strptime(self.end_date, "%Y-%m-%d")    #datetime object
         self.delta_date = abs((self.end_date_ - self.start_date_).days) #number of days between 2 dates
 
+
         try:
             self.start_date_ > self.end_date_
         except:
