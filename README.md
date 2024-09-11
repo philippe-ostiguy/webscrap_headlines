@@ -2,7 +2,7 @@
 
 # Access Historical Financial News Headlines with Python
 
-Hi, I make an algorithm to get historical financial news with Python for free.
+Hi, I made an algorithm to get historical financial news with Python for free.
 
 For the article with explanation, it's [here](https://ostiguyphilippe.medium.com/access-historical-financial-news-headlines-with-python-be1b8faaea9f).
 
